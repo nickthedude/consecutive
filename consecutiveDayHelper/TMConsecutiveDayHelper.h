@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDate+Helpers.h"
 
 @interface TMConsecutiveDayHelper : NSObject
 
++(TMConsecutiveDayHelper *) sharedHelper;
+
++(void) appLaunched;
+
++(BOOL) isStreakOngoing;
+
++(NSInteger) streakSizeInDays;
+
++(BOOL) hasComeBackForThisExactNumberOfDaysConsecutively:(NSInteger) consecutiveDaysToTest;
 @end

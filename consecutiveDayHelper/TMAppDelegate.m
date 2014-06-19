@@ -13,7 +13,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    return YES;
+    [TMConsecutiveDayHelper createTestDataInUserDefaults];
+    
+//    NSDate *t = [NSDate date];
+//    NSDateComponents *comp = [[NSDateComponents alloc] init];
+//    [comp setDay:4];
+//    
+//    
+//    [[NSCalendar currentCalendar] dateByAddingComponents:comp toDate:t options:nil];
+     return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

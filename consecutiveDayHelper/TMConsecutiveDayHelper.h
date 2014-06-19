@@ -20,4 +20,7 @@
 +(NSInteger) streakSizeInDays;
 
 +(BOOL) hasComeBackForThisExactNumberOfDaysConsecutively:(NSInteger) consecutiveDaysToTest;
+
++(void) createTestDataInUserDefaults;
+
 @end

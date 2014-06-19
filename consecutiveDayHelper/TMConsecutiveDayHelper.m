@@ -20,8 +20,25 @@ static TMConsecutiveDayHelper *sharedHelper = nil;
     return sharedHelper;
 }
 
++(void) createTestDataInUserDefaults {
+    
+    NSMutableArray *testDates = [[NSMutableArray alloc] init];
+
+    for (NSInteger i = 1; i < 10; i++) {
+        NSDate *today = [[NSDate date] dateWithoutTime];
+        today = [today dateByAddingDays:i];
+        [testDates addObject:today];
+
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:testDates forKey:@"TMConsecutiveDayHelper"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
 +(void) appLaunched {
    
+    NSMutableSet *savedLaunchDates;
+    
     //check if the default exists if not create using todays date
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"] == nil) {
         NSDate *today = [[NSDate date] dateWithoutTime];
@@ -32,8 +49,33 @@ static TMConsecutiveDayHelper *sharedHelper = nil;
     else {
 
         //using a set so if users come back more than once in a single day it doesn't mess us up.
-        NSMutableSet *savedLaunchDates = [[NSMutableSet alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"]];
+        savedLaunchDates = [[NSMutableSet alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"]];
         [savedLaunchDates addObject:[[NSDate date] dateWithoutTime]];
+    }
+    
+    //created an ordered date array so we can iterate through the dates in order
+    NSArray *dateArray = [[savedLaunchDates allObjects] sortedArrayUsingComparator:
+                          ^(id obj1, id obj2) {
+                              return [obj1 compare:obj2];
+                          }];
+
+    
+    BOOL streakIntact = YES;
+    NSDate *dateToCompare;
+    for (NSInteger i = 0; i < [dateArray count]; i++) {
+    
+        if (i > 0) {
+            if ([[dateToCompare dateByAddingDays:1] compare:[dateArray objectAtIndex:i]] != NSOrderedSame ) {
+                streakIntact = NO;
+            }
+        }
+        dateToCompare = [dateArray objectAtIndex:i];
+
+    }
+    
+    if (streakIntact == NO) {
+        NSDate *today = [[NSDate date] dateWithoutTime];
+        [[NSUserDefaults standardUserDefaults] setObject:@[today] forKey:@"TMConsecutiveDayHelper"];
     }
 }
 
@@ -43,6 +85,7 @@ static TMConsecutiveDayHelper *sharedHelper = nil;
 }
 
 +(NSInteger) streakSizeInDays {
+    
     
     return 0;
 }

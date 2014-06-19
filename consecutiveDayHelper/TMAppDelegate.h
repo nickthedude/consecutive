@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TMConsecutiveDayHelper.h"
+#import "NSDate+Helpers.h"
 
 @interface TMAppDelegate : UIResponder <UIApplicationDelegate>
+
 
 @property (strong, nonatomic) UIWindow *window;
 

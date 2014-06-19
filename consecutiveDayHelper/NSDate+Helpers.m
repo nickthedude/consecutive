@@ -24,7 +24,8 @@
 - (NSDate *) dateByAddingDays:(NSInteger) days months:(NSInteger) months years:(NSInteger) years
 {
 	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-	dateComponents.day = days;
+	[dateComponents setDay:days];
+    //dateComponents.day = days;
 	dateComponents.month = months;
 	dateComponents.year = years;
 	

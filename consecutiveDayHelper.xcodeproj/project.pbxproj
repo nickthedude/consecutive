@@ -21,6 +21,9 @@
 		52FF463019536E530076AAC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FF461219536E530076AAC7 /* UIKit.framework */; };
 		52FF463819536E530076AAC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52FF463619536E530076AAC7 /* InfoPlist.strings */; };
 		52FF463A19536E530076AAC7 /* consecutiveDayHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF463919536E530076AAC7 /* consecutiveDayHelperTests.m */; };
+		52FF4645195370210076AAC7 /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF4644195370210076AAC7 /* NSDate+Helpers.m */; };
+		52FF4648195370480076AAC7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 52FF4647195370480076AAC7 /* LICENSE */; };
+		52FF464B195370AD0076AAC7 /* TMConsecutiveDayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF464A195370AD0076AAC7 /* TMConsecutiveDayHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		52FF463519536E530076AAC7 /* consecutiveDayHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "consecutiveDayHelperTests-Info.plist"; sourceTree = "<group>"; };
 		52FF463719536E530076AAC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52FF463919536E530076AAC7 /* consecutiveDayHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = consecutiveDayHelperTests.m; sourceTree = "<group>"; };
+		52FF4643195370210076AAC7 /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
+		52FF4644195370210076AAC7 /* NSDate+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helpers.m"; sourceTree = "<group>"; };
+		52FF4647195370480076AAC7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		52FF4649195370AD0076AAC7 /* TMConsecutiveDayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMConsecutiveDayHelper.h; sourceTree = "<group>"; };
+		52FF464A195370AD0076AAC7 /* TMConsecutiveDayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMConsecutiveDayHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +120,9 @@
 		52FF461419536E530076AAC7 /* consecutiveDayHelper */ = {
 			isa = PBXGroup;
 			children = (
-				52FF461D19536E530076AAC7 /* TMAppDelegate.h */,
-				52FF461E19536E530076AAC7 /* TMAppDelegate.m */,
-				52FF462019536E530076AAC7 /* Main.storyboard */,
-				52FF462319536E530076AAC7 /* TMViewController.h */,
-				52FF462419536E530076AAC7 /* TMViewController.m */,
+				52FF46461953702F0076AAC7 /* NSDate+Helpers */,
+				52FF464C195370C60076AAC7 /* ConsecutiveDayHelper */,
+				52FF464D195370DC0076AAC7 /* DemoApp */,
 				52FF462619536E530076AAC7 /* Images.xcassets */,
 				52FF461519536E530076AAC7 /* Supporting Files */,
 			);
@@ -150,6 +156,37 @@
 				52FF463619536E530076AAC7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52FF46461953702F0076AAC7 /* NSDate+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				52FF4647195370480076AAC7 /* LICENSE */,
+				52FF4643195370210076AAC7 /* NSDate+Helpers.h */,
+				52FF4644195370210076AAC7 /* NSDate+Helpers.m */,
+			);
+			name = "NSDate+Helpers";
+			sourceTree = "<group>";
+		};
+		52FF464C195370C60076AAC7 /* ConsecutiveDayHelper */ = {
+			isa = PBXGroup;
+			children = (
+				52FF4649195370AD0076AAC7 /* TMConsecutiveDayHelper.h */,
+				52FF464A195370AD0076AAC7 /* TMConsecutiveDayHelper.m */,
+			);
+			name = ConsecutiveDayHelper;
+			sourceTree = "<group>";
+		};
+		52FF464D195370DC0076AAC7 /* DemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				52FF461D19536E530076AAC7 /* TMAppDelegate.h */,
+				52FF461E19536E530076AAC7 /* TMAppDelegate.m */,
+				52FF462019536E530076AAC7 /* Main.storyboard */,
+				52FF462319536E530076AAC7 /* TMViewController.h */,
+				52FF462419536E530076AAC7 /* TMViewController.m */,
+			);
+			name = DemoApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +268,7 @@
 			files = (
 				52FF462719536E530076AAC7 /* Images.xcassets in Resources */,
 				52FF461919536E530076AAC7 /* InfoPlist.strings in Resources */,
+				52FF4648195370480076AAC7 /* LICENSE in Resources */,
 				52FF462219536E530076AAC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF4645195370210076AAC7 /* NSDate+Helpers.m in Sources */,
 				52FF462519536E530076AAC7 /* TMViewController.m in Sources */,
+				52FF464B195370AD0076AAC7 /* TMConsecutiveDayHelper.m in Sources */,
 				52FF461B19536E530076AAC7 /* main.m in Sources */,
 				52FF461F19536E530076AAC7 /* TMAppDelegate.m in Sources */,
 			);
@@ -380,6 +420,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "consecutiveDayHelper/consecutiveDayHelper-Prefix.pch";
 				INFOPLIST_FILE = "consecutiveDayHelper/consecutiveDayHelper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -393,6 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "consecutiveDayHelper/consecutiveDayHelper-Prefix.pch";
 				INFOPLIST_FILE = "consecutiveDayHelper/consecutiveDayHelper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

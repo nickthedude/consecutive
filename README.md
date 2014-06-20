@@ -7,7 +7,7 @@ The component uses NSUserDefaults to keep track of the dates. It also makes use 
 
 Install:
 
-copy TMConsecutiveDayHelper.h and TMConsecutiveDayHelper.m into your project as well as NSDate+Helpers.h and NSDate+Helpers.m. 
+        Copy TMConsecutiveDayHelper.h and TMConsecutiveDayHelper.m into your project as well as NSDate+Helpers.h and NSDate+Helpers.m. 
 
 place a call to:
 

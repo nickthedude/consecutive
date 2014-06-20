@@ -7,13 +7,13 @@ The component uses NSUserDefaults to keep track of the dates. It also makes use 
 
 Install:
 
-        Copy TMConsecutiveDayHelper.h and TMConsecutiveDayHelper.m into your project as well as NSDate+Helpers.h and NSDate+Helpers.m. 
+Copy TMConsecutiveDayHelper.h and TMConsecutiveDayHelper.m into your project as well as NSDate+Helpers.h and NSDate+Helpers.m. 
 
-place a call to:
+Place a call to:
 
         [TMConsecutiveDayHelper appLaunched];
 
-In your delegates application didFinishLaunchingWithOptions: method
+In your App Delegate's application didFinishLaunchingWithOptions: method
 
 Then to check on your users streak you can call:
 

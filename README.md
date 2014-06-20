@@ -29,4 +29,4 @@ There's no logic as of yet to reset the streak but it could be added quite easil
 
 Downsides:
 
-Because the app uses NSUserDefaults it could be gamed pretty easily, by the user changing the date on their device. 
+Because the app uses NSUserDefaults it could be gamed pretty easily, by the user changing the date on their device. The component also uses ARC so if your project is using reference counting (ie retain release) then place the compiler flag ' -fobjc-arc ' inside the TMConsecutiveDayHelper.m row under the 'Compile Sources' located within the 'Build Phases' Tab for your App/Target settings.

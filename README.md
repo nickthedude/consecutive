@@ -25,7 +25,7 @@ Or Alternatively call:
 
 which returns a BOOL
 
-There's no logic as of yet to reset the streak but it could be added quite easily. basically you're responsible for what you want to do with the info and the class just keeps track of the streak itself.
+Basically you're responsible for what you want to do with the info and the class just keeps track of the streak itself.
 
 Downsides:
 

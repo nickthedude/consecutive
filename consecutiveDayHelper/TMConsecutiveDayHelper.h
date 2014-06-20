@@ -19,5 +19,7 @@
 
 +(BOOL) hasComeBackForThisExactNumberOfDaysConsecutively:(NSInteger) consecutiveDaysToTest;
 
++(void) resetStreak;
+//+(void) createTestDataInUserDefaults;
 
 @end

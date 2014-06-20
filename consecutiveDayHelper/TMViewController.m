@@ -32,6 +32,7 @@
 
 - (IBAction)refreshData:(id)sender {
     
+    [TMConsecutiveDayHelper resetStreak];
     self.consecutiveDaysLaunchedLabel.text = [NSString stringWithFormat:@"%i",[TMConsecutiveDayHelper streakSizeInDays]];
     self.savedDatesTextView.text = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"] description];
 

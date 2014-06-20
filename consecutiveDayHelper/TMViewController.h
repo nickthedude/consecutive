@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TMConsecutiveDayHelper.h"
+
 
 @interface TMViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *consecutiveDaysLaunchedLabel;
+@property (strong, nonatomic) IBOutlet UITextView *savedDatesTextView;
+- (IBAction)refreshData:(id)sender;
 @end

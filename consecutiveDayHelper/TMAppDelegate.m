@@ -13,8 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [TMConsecutiveDayHelper createTestDataInUserDefaults];
-    
+    //[TMConsecutiveDayHelper createTestDataInUserDefaults];
+    [TMConsecutiveDayHelper appLaunched];
 //    NSDate *t = [NSDate date];
 //    NSDateComponents *comp = [[NSDateComponents alloc] init];
 //    [comp setDay:4];

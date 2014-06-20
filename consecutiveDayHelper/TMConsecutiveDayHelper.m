@@ -51,7 +51,7 @@ static TMConsecutiveDayHelper *sharedHelper = nil;
         //using a set so if users come back more than once in a single day it doesn't mess us up.
         savedLaunchDates = [[NSMutableSet alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"]];
         [savedLaunchDates addObject:[[NSDate date] dateWithoutTime]];
-    }
+    
     
     //created an ordered date array so we can iterate through the dates in order
     NSArray *dateArray = [[savedLaunchDates allObjects] sortedArrayUsingComparator:
@@ -77,22 +77,29 @@ static TMConsecutiveDayHelper *sharedHelper = nil;
         NSDate *today = [[NSDate date] dateWithoutTime];
         [[NSUserDefaults standardUserDefaults] setObject:@[today] forKey:@"TMConsecutiveDayHelper"];
     }
+    else {
+        [[NSUserDefaults standardUserDefaults] setObject:dateArray forKey:@"TMConsecutiveDayHelper"];
+
+    }
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+(BOOL) isStreakOngoing {
- 
-    return NO;
-}
 
 +(NSInteger) streakSizeInDays {
     
-    
-    return 0;
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"] count];
+
 }
 
 +(BOOL) hasComeBackForThisExactNumberOfDaysConsecutively:(NSInteger) consecutiveDaysToTest {
     
-    return NO;
+    BOOL retVal = NO;
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"] count] == consecutiveDaysToTest) {
+        retVal = YES;
+    }
+    return retVal;
 }
 
 

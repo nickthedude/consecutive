@@ -15,12 +15,9 @@
 
 +(void) appLaunched;
 
-+(BOOL) isStreakOngoing;
-
 +(NSInteger) streakSizeInDays;
 
 +(BOOL) hasComeBackForThisExactNumberOfDaysConsecutively:(NSInteger) consecutiveDaysToTest;
 
-+(void) createTestDataInUserDefaults;
 
 @end

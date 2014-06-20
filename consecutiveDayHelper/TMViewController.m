@@ -17,6 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.consecutiveDaysLaunchedLabel.text = [NSString stringWithFormat:@"%i",[TMConsecutiveDayHelper streakSizeInDays]];
+    self.savedDatesTextView.text = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"] description];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +30,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refreshData:(id)sender {
+    
+    self.consecutiveDaysLaunchedLabel.text = [NSString stringWithFormat:@"%i",[TMConsecutiveDayHelper streakSizeInDays]];
+    self.savedDatesTextView.text = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TMConsecutiveDayHelper"] description];
+
+}
 @end
